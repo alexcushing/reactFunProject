@@ -43,7 +43,20 @@ var Body = React.createClass({
     },
 
   render() {
-    if(name.length > 0){
+    if (name.toLowerCase() === "james" ){
+        return (
+          <div>
+          <div className="App">
+            <div className="App-header">
+              <h2>Get out of here, Jamie.</h2>
+            </div>
+          </div>
+            <Test callSubmit={this.callSubmit}/>
+          </div>
+        );
+      }
+
+    else if(name.length > 0){
       return (
         <div>
         <div className="App">
@@ -55,18 +68,18 @@ var Body = React.createClass({
         </div>
       );
     }
-    else{
-      return (
-        <div>
-        <div className="App">
-          <div className="App-header">
-            <h2>Welcome to React.</h2>
+      else{
+        return (
+          <div>
+          <div className="App">
+            <div className="App-header">
+              <h2>Welcome to React.</h2>
+            </div>
           </div>
-        </div>
-          <Test callSubmit={this.callSubmit}/>
-        </div>
-      );
-    }
+            <Test callSubmit={this.callSubmit}/>
+          </div>
+        );
+      }
   }
 });
 
