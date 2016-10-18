@@ -12,12 +12,15 @@ class App extends Component {
 }
 
 var Test = React.createClass({
+  sendOut(){
+    this.props.callSubmit(this.myInput.value)
+  },
   render(){
     return(
       <div className="test-div">
         <div className="outerCenter">
-            <User />
-            <input type="text" ref="myInput" className="innerCenter textAr" onChange={this.callSubmit}></input>
+          {/*}  <User />*/}
+            Name: <input type="text" ref={(input) => this.myInput = input} className="innerCenter textAr" onChange={this.sendOut}></input>
         </div>
       </div>
     )
@@ -25,23 +28,45 @@ var Test = React.createClass({
 });
 
 var Body = React.createClass({
-  sub: function(){
-    name = this.props.children.refs.myInput.value;
-    console.log(name)
-    console.log("called")
-    this.setState({name:this.props.children.refs.myInput.value});
-  },
+    getInitialState() {
+      return {
+        name:""
+      };
+    },
+
+    callSubmit(myname){
+      console.log("name: ")
+      console.log(myname)
+      name = myname;
+
+      this.setState({name:myname});
+    },
+
   render() {
-    return (
-      <div>
-      <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React, {name}</h2>
+    if(name.length > 0){
+      return (
+        <div>
+        <div className="App">
+          <div className="App-header">
+            <h2>Welcome to React, {name}.</h2>
+          </div>
         </div>
-      </div>
-        <Test callSubmit={this.sub} />
-      </div>
-    );
+          <Test callSubmit={this.callSubmit}/>
+        </div>
+      );
+    }
+    else{
+      return (
+        <div>
+        <div className="App">
+          <div className="App-header">
+            <h2>Welcome to React.</h2>
+          </div>
+        </div>
+          <Test callSubmit={this.callSubmit}/>
+        </div>
+      );
+    }
   }
 });
 
