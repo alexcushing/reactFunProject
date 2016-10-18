@@ -43,54 +43,40 @@ var Body = React.createClass({
     },
 
   render() {
-    if (name.toLowerCase() === "james" ){
         return (
           <div>
           <div className="App">
             <div className="App-header">
-              <h2>Get out of here, Jamie.</h2>
+              <User />
             </div>
           </div>
             <Test callSubmit={this.callSubmit}/>
           </div>
+        );
+
+  }
+});
+
+var User = React.createClass({
+  render() {
+    if (name.toLowerCase() === "james" || name.toLowerCase() === "jamie" ){
+        return (
+          <h2>Get out of here, Jamie.</h2>
         );
       }
 
     else if(name.length > 0){
       return (
-        <div>
-        <div className="App">
-          <div className="App-header">
-            <h2>Welcome to React, {name}.</h2>
-          </div>
-        </div>
-          <Test callSubmit={this.callSubmit}/>
-        </div>
+        <h2>Welcome to React, {name}.</h2>
       );
     }
       else{
         return (
-          <div>
-          <div className="App">
-            <div className="App-header">
-              <h2>Welcome to React.</h2>
-            </div>
-          </div>
-            <Test callSubmit={this.callSubmit}/>
-          </div>
+          <h2>Welcome to React.</h2>
         );
       }
   }
 });
-
-var User = React.createClass({
-  render(){
-    return(
-      <p>name: {name}</p>
-    )
-  }
-});
-
 
 
 export default App;
