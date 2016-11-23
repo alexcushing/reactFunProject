@@ -1,0 +1,39 @@
+{
+  "name": "testApp",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "css-loader": "^0.25.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.5.0",
+    "gulp-uglify": "^2.0.0",
+    "jshint": "^2.9.3",
+    "react-scripts": "0.6.1"
+  },
+  "dependencies": {
+    "babel-preset-react": "^6.16.0",
+    "concurrently": "^3.1.0",
+    "css-loader": "^0.25.0",
+    "gulp": "^3.9.1",
+    "gulp-exec": "^2.1.2",
+    "gulp-nodemon": "^2.2.1",
+    "install": "^0.8.2",
+    "nib": "^1.1.2",
+    "npm": "^4.0.2",
+    "react": "^15.4.1",
+    "react-dom": "^15.3.2",
+    "react-native": "^0.38.0",
+    "react-scripts": "^0.7.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.3.1",
+    "webpack": "^1.13.2"
+  },
+  "scripts": {
+    "start": "concurrently \"react-scripts start\" \"gulp\" ",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
