@@ -82,6 +82,12 @@ var User = React.createClass({
             );
           }
 
+    else if (name.toLowerCase() === "kanye" || name.toLowerCase() === "yeezy" || name.toLowerCase() === "kanye west" || name.toLowerCase() === "yeezy" || name.toLowerCase() === "yeezus" ){
+            return (
+              <h1 className="kanye">YeezuS</h1>
+            );
+          }
+
     else if (name.toLowerCase() === "jayz" || name.toLowerCase() === "jay z" || name.toLowerCase() === "monster" ){
             return (
               <h2>
